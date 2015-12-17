@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class javakiso1{
+public class javakiso1 {
 	  public static void main(String args[]) {
 		  System.out.println("x掛けるｙの計算表を算出します。");
 		  System.out.println("x,ｙともに1以上100以下で指定してください。");
