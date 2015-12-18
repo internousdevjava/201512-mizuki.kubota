@@ -8,16 +8,16 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 class javakiso3{
-	
-	 static String Path ="C://Users//internous//Desktop";
+
+	 static String Path = new File(".").getAbsoluteFile().getParent();;
 	 static String FileName;
 	 static String AllPath;
 	 static String Dir;
-	  
+
   public static void main(String args[]){
 	  int menu = 0;
 
-	  
+
 	  do{
 		  System.out.println();
 		  System.out.println("テキストファイルエディタ　メニュー");
@@ -39,7 +39,7 @@ class javakiso3{
 		  AllPath = Path+"//"+FileName ;
 
 		  switch (menu){
-		  
+
 		  /*
 		  case 1:
 		    System.out.println("パスを入力してください");
@@ -97,7 +97,7 @@ class javakiso3{
 	      System.out.println("ディレクトリの作成に失敗しました");
 	    }
   }
-  
+
   public static void SaveFile(String path){
 	  try{
 	      File file = new File(path);
