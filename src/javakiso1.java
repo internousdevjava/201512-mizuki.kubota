@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class javakiso1 {
+public class javakiso1{
 	  public static void main(String args[]) {
 		  System.out.println("x掛けるｙの計算表を算出します。");
 		  System.out.println("x,ｙともに1以上100以下で指定してください。");
@@ -24,8 +24,19 @@ public class javakiso1 {
 		    	  kuku[i][j] = i * j;
 		      }
 		    }
-
+		    
+		    
+		    System.out.print("   ");
+		    for(int i=1;i<=y; i ++){
+		        System.out.print(i + " ");
+		    }
+		    System.out.println();
+		    for(int i=1;i<=y+5; i ++){
+		        System.out.print("☆");
+		    }
+		    System.out.println();
 		    for( int i=1; i<=y; i++ ) {
+		    	System.out.print(i+"★");
 		      for( int j=1; j<=x; j++ ) {
 		    	  System.out.print(kuku[i][j] + " ");
 		      }

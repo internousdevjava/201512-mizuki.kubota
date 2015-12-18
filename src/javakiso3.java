@@ -10,8 +10,9 @@ import java.io.InputStreamReader;
 class javakiso3{
 	
 	 static String Path ="C://Users//internous//Desktop";
-	 static String FileName ="iosjdifj.txt";
-	 static String AllPath ="C://Users//internous//Desktop¥¥iosjdifj.txt";
+	 static String FileName;
+	 static String AllPath;
+	 static String Dir;
 	  
   public static void main(String args[]){
 	  int menu = 0;
@@ -22,63 +23,66 @@ class javakiso3{
 		  System.out.println("テキストファイルエディタ　メニュー");
 		  System.out.println("///現在選択しているパス: "+Path+"///");
 		  System.out.println("///現在選択しているファイル: "+FileName+"///");
-		  System.out.println("1: パスの直接入力");
-		  System.out.println("2: ディレクトリ閲覧と移動");
-		  System.out.println("3: ディレクトリの作成");
-		  System.out.println("4: .txt一覧と選択");
-		  System.out.println("5: ファイルの新規作成");
-		  System.out.println("6: ファイルの読み込み");
-		  System.out.println("7: 追記する");
-		  System.out.println("8: 上書きする");
-		  System.out.println("9: 終了");
+		  System.out.println("1: ディレクトリ閲覧と移動");
+		  System.out.println("2: ディレクトリの作成");
+		  System.out.println("3: .txt一覧と選択");
+		  System.out.println("4: ファイルの新規作成");
+		  System.out.println("5: ファイルの読み込み");
+		  System.out.println("6: 追記する");
+		  System.out.println("7: 上書きする");
+		  System.out.println("8: 終了");
 		  System.out.println("/////////////////////////////////////////");
 		  System.out.println();
 		  System.out.print("メニューを");
 
-		  menu = input_select(1,9);
+		  menu = input_select(1,8);
 		  AllPath = Path+"//"+FileName ;
 
 		  switch (menu){
 		  
+		  /*
 		  case 1:
 		    System.out.println("パスを入力してください");
 		    Path = input_string();
 		    break;
-		  case 2:
+		    */
+		  case 1:
 		    System.out.println("デイレクトリ一覧を表示します");
 		    ShowDirList(Path);
 		    break;
-		  case 3:
-		    System.out.println("デイレクトリを表示作成します");
-		    Makedirs(Path);
+		  case 2:
+		    System.out.println("デイレクトリを作成します");
+		    System.out.println("ディレクトリ名前を入力してください");
+		    Dir = Path +"//"+ input_string();
+		    Makedirs(Dir);
 		    break;
-		  case 4:
+		  case 3:
 		    System.out.println(".txtを表示します");
 		    Showtxt(Path);
 		    System.out.println("//////////////////////");
 		    break;
-		  case 5:
+		  case 4:
 		    System.out.println("ファイルを作成します");
 		    System.out.println("ファイル名を入力してください");
 		    FileName = input_string()+".txt";
 		    AllPath = Path+"//"+FileName;
 		    MakeFile(AllPath);
 		    break;
-		  case 6:
+		  case 5:
 		    System.out.println("ファイル読み込み中...");
 		    ReadFile(AllPath);
 		    break;
-		  case 7:
+		  case 6:
 		    System.out.println("ファイルに追記する内容を入力してください");
 		    AddFile(AllPath);
 		    break;
-		  case 8:
+		  case 7:
 		    System.out.println("ファイルに上書きする内容を入力してください");
 		    SaveFile(AllPath);
 		    break;
 		  }
 
-	  }while(menu !=9);
+	  }while(menu !=8);
 	  System.exit(0);
 
   	}
@@ -88,6 +92,7 @@ class javakiso3{
 
 	    if (newfile.mkdirs()){
 	      System.out.println("ディレクトリの作成に成功しました");
+	      Path = Dir;
 	    }else{
 	      System.out.println("ディレクトリの作成に失敗しました");
 	    }
