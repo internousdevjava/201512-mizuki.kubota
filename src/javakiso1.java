@@ -26,19 +26,40 @@ public class javakiso1{
 		    }
 		    
 		    
-		    System.out.print("   ");
+		    System.out.print("  ★");
 		    for(int i=1;i<=y; i ++){
-		        System.out.print(i + " ");
+		    	if(i==100){
+		    		System.out.print("   "+i);
+		    	}else if(i>=10 && i <= 99){
+		    		System.out.print("    "+i);
+		    	}else{
+		    		System.out.print("     "+i);
+		    	}
 		    }
-		    System.out.println();
-		    for(int i=1;i<=y+5; i ++){
-		        System.out.print("☆");
-		    }
-		    System.out.println();
+		    System.out.println("");
+		    System.out.println("////////////////////////////////////////////////////");
 		    for( int i=1; i<=y; i++ ) {
-		    	System.out.print(i+"★");
+		    	if(i==100){
+		    		System.out.print(i+"★");
+		    	}else if(i>=10 && i <= 99){
+		    		System.out.print(" "+i+"★");
+		    	}else{
+		    		System.out.print("  "+i+"★");
+		    	}
 		      for( int j=1; j<=x; j++ ) {
-		    	  System.out.print(kuku[i][j] + " ");
+		    	  //System.out.print(kuku[i][j] + " ");
+		    	  if(kuku[i][j] >=1000 && kuku[i][j] <=9999){
+		    		  System.out.print(" "+kuku[i][j] + " ");
+		    	  }else if (kuku[i][j] >=100 && kuku[i][j] <=999) {
+		    		  System.out.print("  "+kuku[i][j] + " ");
+				}else if (kuku[i][j] >=10 && kuku[i][j] <=99) {
+		    		  System.out.print("   "+kuku[i][j] + " ");
+				}else if (kuku[i][j] >=1 && kuku[i][j] <=9) {
+		    		  System.out.print("    "+kuku[i][j] + " ");
+				}
+				else{
+					System.out.print(kuku[i][j] + " ");
+				}
 		      }
 		      	  System.out.println();
 		    }
