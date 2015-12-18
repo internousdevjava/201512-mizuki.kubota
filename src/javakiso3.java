@@ -135,16 +135,22 @@ class javakiso3{
 }
 
   public static void Showtxt(String path) {
+	  		System.out.println("///////////////////////////////////");
 	  		File dir = new File(path);
-	          String []files = dir.list(new MyFilter());
+	        String []files = dir.list(new MyFilter());
 	          int n = 1;
 	          for(int i=0; i<files.length; ++i){
-	              System.out.println(i+" : "+files[i]);
+	              System.out.println(n+" : "+files[i]);
 	              n ++;
 	          }
+	       System.out.println("///////////////////////////////////");
+	       System.out.println("0を入力するとキャンセルします");
 	       System.out.print("移動先を");
-	  	   int select = input_select(0,n);
+	  	   int select = input_select(0,n)-1;
+	  	   System.out.println();
+	  	   if(select != -1){
 	  	   FileName = files[select];
+	  	   }
 	      }
 
 	public static String input_string(){
